@@ -58,6 +58,7 @@ const Navbar = () => {
         <a href="/events" className="transition-colors duration-300 ease-in-out min-w-[fit-content]">Past Events</a>
         <a href="/branches" className="transition-colors duration-300 ease-in-out">Branches</a>
         <a href="/team" className="transition-colors duration-300 ease-in-out">Team</a>
+        <a href="https://blog.curingwithcare.org" className="transition-colors duration-300 ease-in-out">Blog</a>
       </div>
     </nav>
   );
