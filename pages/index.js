@@ -103,6 +103,14 @@ export default function Home() {
   // Text animation for hero section
   const heroText = "curingwithCARE";
   
+  useEffect(() => {
+    const banner = document.getElementById("announcement-banner");
+    if (banner) {
+      const nav = document.querySelector("nav");
+      if (nav) nav.style.marginTop = "3rem";
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -111,6 +119,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       
+      {/* Announcement Banner */}
+      <div id="announcement-banner" className="w-full bg-gradient-to-r from-pink-500 to-red-400 text-white py-3 px-4 text-center font-semibold text-lg shadow-md">
+        🚨 <span className="font-bold">New!</span> Cancer Awareness & Action Challenge is happening now! 
+        <a href="/caac" className="underline font-bold ml-2 hover:text-yellow-200 transition-colors">More info here</a>
+      </div>
+
       <div className="pattern-back min-h-screen">
         <motion.main 
           ref={heroRef}
