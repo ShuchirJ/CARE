@@ -180,7 +180,7 @@ export default function Home() {
             }}
           >
             <Button 
-              link="/" 
+              link="https://www.zeffy.com/en-US/donation-form/donate-to-curingwithcare" 
               text="Donate Now" 
               className="bg-color-500 hover:bg-color-600 text-white px-8 py-4 text-xl font-bold rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-color-400 flex items-center justify-center" 
               aria-label="Donate to CARE"
@@ -401,8 +401,8 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 w-full max-w-6xl">
             {[
-              { number: "500+", text: "Members worldwide", blob: "blob3.svg" },
-              { number: "$27k+", text: "raised", blob: "blob2.svg" },
+              { number: "850+", text: "Members worldwide", blob: "blob3.svg" },
+              { number: "$30k+", text: "raised", blob: "blob2.svg" },
               { number: "40+", text: "Chapters", blob: "blob.svg" }
             ].map((item, index) => (
               <motion.div 

@@ -23,6 +23,7 @@ function CareApp({ Component, pageProps }) {
 
         <div className="flex gap-12">
           <div className="flex flex-col text-right">
+            <a href="https://www.zeffy.com/en-US/donation-form/donate-to-curingwithcare" className="text-gray-600 hover:text-gray-800">Donate</a>
             <a href="/about" className="text-gray-600 hover:text-gray-800">Past Events</a>
             <a href="/branches" className="text-gray-600 hover:text-gray-800">Branches</a>
             <a href="/team" className="text-gray-600 hover:text-gray-800">Team</a>
