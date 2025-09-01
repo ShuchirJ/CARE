@@ -135,8 +135,8 @@ const EmpowermentSection = ({ title, content, imageUrl, isReversed }) => {
 
 const ImpactStats = () => {
   const stats = [
-    { value: '500+', label: 'Members Worldwide' },
-    { value: '$27K', label: 'Raised' },
+    { value: '850+', label: 'Members Worldwide' },
+    { value: '$30K', label: 'Raised' },
     { value: '40+', label: 'Chapters' },
   ];
 
