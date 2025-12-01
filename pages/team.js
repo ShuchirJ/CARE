@@ -15,6 +15,7 @@ const Teams = () => {
   const [boardMembers, setBoardMembers] = useState([]);
   const [researchMembers, setResearchMembers] = useState([]);
   const [interns, setInterns] = useState([]);
+  const [journalismMembers, setJournalismMembers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
@@ -44,20 +45,26 @@ const Teams = () => {
           .select('*')
           .eq('category', 'intern')
           .order('name', { ascending: true });
-        
+
+        const { data: journalismData, error: journalismError } = await supabase
+          .from('team_members')
+          .select('*')
+          .eq('category', 'journalism')
+          .order('name', { ascending: true });
+
         if (boardError) {
-          console.error("Error fetching board members:", boardError);
           setError("Failed to load board members");
         } else if (researchError) {
-          console.error("Error fetching research members:", researchError);
           setError("Failed to load research members");
         } else if (internsError) {
-          console.error("Error fetching interns:", internsError);
           setError("Failed to load interns");
+        } else if (journalismError) {
+          setError("Failed to load journalism team");
         } else {
           setBoardMembers(boardData || []);
           setResearchMembers(researchData || []);
           setInterns(internsData || []);
+          setJournalismMembers(journalismData || []);
         }
       } catch (e) {
         console.error("Unexpected error:", e);
@@ -246,6 +253,54 @@ const Teams = () => {
                 animate="show"
               >
                 {researchMembers.map((member, index) => (
+                  <motion.div
+                    key={member.id}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      show: { opacity: 1, y: 0 }
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    className={`py-6 px-3 rounded-lg shadow-sm
+                               bg-gradient-to-br from-${getRandomColor(index)}-50 to-${getRandomColor(index)}-100
+                               border border-${getRandomColor(index)}-200`}
+                  >
+                    <span className="font-medium text-gray-800 block">
+                      {member.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </motion.section>
+        )}
+        
+        {/* Journalism Team Section */}
+        {!loading && !error && journalismMembers.length > 0 && (
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="mt-20 mb-20"
+          >
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-green-500 mb-6">Journalism Team</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-400 mx-auto mb-6"></div>
+            </div>
+
+            <div className="max-w-5xl mx-auto">
+              <motion.div 
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center"
+                variants={{
+                  hidden: { opacity: 0 },
+                  show: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.1 }
+                  }
+                }}
+                initial="hidden"
+                animate="show"
+              >
+                {journalismMembers.map((member, index) => (
                   <motion.div
                     key={member.id}
                     variants={{

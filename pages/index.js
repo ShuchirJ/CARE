@@ -120,10 +120,10 @@ export default function Home() {
       </Head>
       
       {/* Announcement Banner */}
-      <div id="announcement-banner" className="w-full bg-gradient-to-r from-pink-500 to-red-400 text-white py-3 px-4 text-center font-semibold text-lg shadow-md">
+      {/* <div id="announcement-banner" className="w-full bg-gradient-to-r from-pink-500 to-red-400 text-white py-3 px-4 text-center font-semibold text-lg shadow-md">
         🚨 <span className="font-bold">New!</span> Cancer Awareness & Action Challenge is happening now! 
         <a href="/caac" className="underline font-bold ml-2 hover:text-yellow-200 transition-colors">More info here</a>
-      </div>
+      </div> */}
 
       <div className="pattern-back min-h-screen">
         <motion.main 
@@ -401,7 +401,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 w-full max-w-6xl">
             {[
-              { number: "850+", text: "Members worldwide", blob: "blob3.svg" },
+              { number: "900+", text: "Members worldwide", blob: "blob3.svg" },
               { number: "$30k+", text: "raised", blob: "blob2.svg" },
               { number: "40+", text: "Chapters", blob: "blob.svg" }
             ].map((item, index) => (

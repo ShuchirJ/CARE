@@ -260,7 +260,7 @@ export default function Home() {
           animate={numbersInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1, delay: numbersInView ? 0.3 : 0 }}
         >
-          <h1 className="ml-6 w-full text-[6rem] md:text-[5rem] leading-none font-bold --font-fredoka-old text-color-900">500+</h1>
+          <h1 className="ml-6 w-full text-[6rem] md:text-[5rem] leading-none font-bold --font-fredoka-old text-color-900">900+</h1>
           <p className="ml-6 w-full text-2xl text-color-900 font-semibold">Members worldwide</p>
         </motion.div>
 
@@ -270,7 +270,7 @@ export default function Home() {
           animate={numbersInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1, delay: numbersInView ? 0.6 : 0 }}
         >
-          <h1 className="ml-6 w-full text-[6rem] md:text-[5rem] leading-none font-bold --font-fredoka-old text-color-900">$27k+</h1>
+          <h1 className="ml-6 w-full text-[6rem] md:text-[5rem] leading-none font-bold --font-fredoka-old text-color-900">$30k+</h1>
           <p className="ml-6 w-full text-3xl text-color-900 font-semibold">raised</p>
         </motion.div>
 
