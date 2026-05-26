@@ -150,21 +150,63 @@ export default function Events() {
             Explore the events we've hosted across our branches. Each event showcases our commitment to making a positive impact in communities worldwide.
           </p>
         </motion.section>
-        <motion.div 
-            key="research"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-            className="flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-center my-8 bg-gradient-to-r from-color-400 to-color-300 p-6 md:p-10 rounded-lg shadow-xl"
-            whileHover={{ scale: 1.02 }}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="mb-12"
         >
-            <h1 className="text-2xl md:text-3xl text-color-900 font-semibold text-left">Check out the CARE research competition!</h1>
-            <Button 
-            link="/research-competition" 
-            text="See More" 
-            />
-        </motion.div>
+          <div className="rounded-3xl border border-green-100 bg-white/80 p-6 shadow-xl backdrop-blur md:p-8">
+            <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green-600">
+                  Review Paper Competitions
+                </p>
+                <h2 className="mt-1 text-2xl font-bold text-gray-900 md:text-3xl">
+                  Explore both CARE review paper competitions
+                </h2>
+                <p className="mt-2 max-w-2xl text-gray-600">
+                  Read the first edition and the new 2nd Edition, with prompts,
+                  winners, and submission details collected in one place.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-white p-5 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-600">
+                  First Edition
+                </p>
+                <h3 className="mt-2 text-xl font-bold text-gray-900">
+                  CARE Review Paper Competition
+                </h3>
+                <p className="mt-2 text-gray-600">
+                  View the original competition prompt, finalist papers, and
+                  award recipients.
+                </p>
+                <div className="mt-5">
+                  <Button link="/research-competition" text="Open First Edition" />
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-5 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
+                  2nd Edition
+                </p>
+                <h3 className="mt-2 text-xl font-bold text-gray-900">
+                  CARE Review Paper Competition 2nd Edition
+                </h3>
+                <p className="mt-2 text-gray-600">
+                  Read the new prompts and see the 2nd Edition placements.
+                  Paper titles and the first-place PDF will be added soon.
+                </p>
+                <div className="mt-5">
+                  <Button link="/research-competition-2" text="Open Second Edition" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
                               
         {/* Branch Navigation */}
         {!loading && !error && branches.length > 0 && (
